@@ -1,0 +1,62 @@
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --text: #2b2622;
+  --text-secondary: #6b6259;
+  --accent: #661414;
+  --border: #e7dfd4;
+  --shadow: rgba(80, 60, 40, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17140f;
+    --surface: #211d17;
+    --text: #ece5da;
+    --text-secondary: #a89f92;
+    --accent: #e8a0a0;
+    --border: #332d24;
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+    "Hiragino Sans", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 40px 22px 96px; }
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand a { text-decoration: none; color: var(--accent); font-weight: 700; font-size: 20px; letter-spacing: 0.5px; }
+.brand span { color: var(--text-secondary); font-size: 13px; }
+.lang { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+.lang button {
+  border: 0; background: transparent; color: var(--text-secondary);
+  padding: 7px 14px; font-size: 13px; cursor: pointer; font-weight: 600;
+}
+.lang button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: 0.3px; }
+.updated { color: var(--text-secondary); font-size: 13px; margin: 0 0 28px; }
+section { margin-bottom: 24px; }
+h2 { font-size: 17px; margin: 0 0 6px; color: var(--accent); }
+h2 a { color: var(--accent); text-decoration: none; }
+h2 a:hover { text-decoration: underline; }
+p { margin: 0; color: var(--text); }
+.card a { color: var(--accent); }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 26px 24px; box-shadow: 0 6px 24px var(--shadow);
+}
+footer { margin-top: 40px; color: var(--text-secondary); font-size: 12px; text-align: center; }
+footer a { color: var(--accent); }
+.nav { margin-top: 30px; display: flex; gap: 18px; flex-wrap: wrap; }
+.nav a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
+[data-lang="en"] .zh, [data-lang="zh"] .en { display: none; }
